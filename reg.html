@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Registration Form</title>
+    <style>
+        /* Styles for the Registration Form */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: hsl(199, 89%, 61%);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        nav {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .main {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 10px;
+            width: 600px;
+        }
+
+        .main h2 {
+            color: hsl(199, 89%, 51%);
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            background-color: hsl(199, 89%, 51%);
+            color: white;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>STUDENT PERFORMANCE PREDICTION</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="nav_link">Home</a></li>
+        </ul>
+    </nav>
+    <center>
+        <div class="main">
+            <h2>Registration Form</h2>
+            <form id="registrationForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required />
+
+                <label for="age">AGE:</label>
+                <input type="text" id="age" name="age" required />
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                </select>
+
+                <label for="dept">Department:</label>
+                <select id="dept" name="dept" required>
+                <option value="computer">COMPUTER SCIENCE</option>
+                <option value="botany">BOTANY</option>
+                <option value="chemistry">CHEMISTRY</option>
+                <option value="economics">ECONOMICS</option>
+                <option value="statistics">STATISTICS</option>
+                </select>
+
+                <label for="rollno">ROLL NO:</label>
+                <input type="text" id="rollno" name="rollno" required />
+
+                <label for="sub1">SUB 1:</label>
+                <input type="text" id="sub1" name="sub1" required />
+
+                <label for="sub2">SUB 2:</label>
+                <input type="text" id="sub2" name="sub2" required />
+
+                <label for="sub3">SUB 3:</label>
+                <input type="text" id="sub3" name="sub3" required />
+
+                <label for="sub4">SUB 4:</label>
+                <input type="text" id="sub4" name="sub4" required />
+
+                <label for="sub5">SUB 5:</label>
+                <input type="text" id="sub5" name="sub5" required />
+
+                <label for="attendance">ATTENDANCE:</label>
+                <input type="text" id="attendance" name="attendance" required />
+
+                <label for="activities">ACTIVITIES:</label>
+                <select id="activities" name="activities" required>
+                <option value="yes">YES</option>
+                <option value="no">NO</option>
+                </select>
+
+                <label for="study">STUDY HOURS:</label>
+                <select id="study" name="study" required>
+                <option value="1hour">1 HOUR</option>
+                <option value="2hour">2 HOUR</option>
+                <option value="3hour">3 HOUR</option>
+                <option value="none">NONE</option>
+                </select>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </center>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Store form data in localStorage
+            localStorage.setItem("sub1", document.getElementById("sub1").value);
+            localStorage.setItem("sub2", document.getElementById("sub2").value);
+            localStorage.setItem("sub3", document.getElementById("sub3").value);
+            localStorage.setItem("sub4", document.getElementById("sub4").value);
+            localStorage.setItem("sub5", document.getElementById("sub5").value);
+
+            // Redirect to the result page
+            window.location.href = "result.html";
+        });
+    </script>
+</body>
+</html>
